@@ -154,7 +154,11 @@ namespace EZBlocker
                 }
                 else // Song is playing
                 {
-                    if (muted) Mute(0);
+                    if (muted)
+                    {
+                        Thread.Sleep(1000);
+                        Mute(0);
+                    }
                     if (MainTimer.Interval > 1000) MainTimer.Interval = 600;
                     if (lastArtistName != whr.artistName)
                     {
